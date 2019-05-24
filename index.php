@@ -23,4 +23,4 @@ $person = [
 ];
 // var_dump($person); 
 
-echo $person['surname'];
+echo $person['name'];
