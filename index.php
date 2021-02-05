@@ -1,26 +1,24 @@
 <?php
+require_once 'helper.php';
 
-$someNumber = 123; //integer
-$someFloat = 3.14; //float
-$someText = 'foo 
-bar 
-baz'; //string
-$someText2 = "foo bar baz";
-$someTrue = true; //bool
-$someNothing = null;
+require_once 'components/header.php';
 
-$someNumber = 321;
+$page = isset($_GET['page']) ? $_GET['page'] : false;
+switch($page) {
+    case(1):
+        require_once 'pages/page1.php';
+        break;
+    case(2):
+        require_once 'pages/page2.php';
+        break;
+    case(3):
+        require_once 'pages/page3.php';
+        break;
+    case('registration'):
+        require_once 'pages/registration.php';
+        break;
+    default:
+        require_once 'pages/landing.php';
+}
+require_once 'components/footer.php';
 
-$someCars = ['zaz', 'gaz', 'uaz', 'vaz', 'maz', 'bmw']; //array
-// $someCars = array (1, 2, 3); <-- slikts stils
-echo $someCars [2] . '<br>'; //print + . '<br>' <-- konkatinācija caur punktu plusa vietā
-echo $someCars [5] . '<br>';
-
-$person = [
-    'name' => 'John',
-    'surname' => 'Doe',
-    'age' => 21,
-];
-// var_dump($person); 
-
-echo $person['name'];
